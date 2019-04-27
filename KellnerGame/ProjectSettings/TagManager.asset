@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
+  - chest
+  - item
   layers:
   - Default
   - TransparentFX
