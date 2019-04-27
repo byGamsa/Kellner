@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup1 : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
-    float throwForce = 600;
     Vector3 objectPos;
     float distance;
 
@@ -18,7 +17,6 @@ public class Pickup1 : MonoBehaviour
     {
 
         distance = Vector3.Distance(item.transform.position, Dest.transform.position);
-        Debug.Log(distance);
 
         if(isHolding == true)
         {
