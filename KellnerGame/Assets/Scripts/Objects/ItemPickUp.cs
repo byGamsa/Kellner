@@ -7,7 +7,6 @@ public class ItemPickUp : MonoBehaviour
 
     float distance;
 
-    bool distanceOn = false;
     bool drag = false;
     bool drop = false;
     bool isHolding = false;
@@ -43,6 +42,7 @@ public class ItemPickUp : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E))
                 {
+                    isHolding = true;
                     item.GetComponent<Rigidbody>().useGravity = false;
                     item.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
@@ -50,10 +50,8 @@ public class ItemPickUp : MonoBehaviour
                     item.transform.position = Dest.position;
                     item.transform.rotation = Dest.rotation;
                     item.transform.parent = Dest.transform;
-                    isHolding = true;
+                    drag = false;
                     StartCoroutine(Delay1());
-
-
                 }
             }
 
@@ -64,39 +62,42 @@ public class ItemPickUp : MonoBehaviour
                     item.transform.parent = null;
                     item.GetComponent<Rigidbody>().useGravity = true;
                     item.GetComponent<Rigidbody>().freezeRotation = false;
-                    isHolding = false;
+                    drop = false;
                     StartCoroutine(Delay2());
-
-
                 }
             }
         }
     }
     void playerHold()
     {
-            if (isHolding == false)
+        if (isHolding == false)
+        {
+            if (canHold == true)
             {
-                if (canHold == true)
-                {
-                    print("ja");
-                    drag = true;
-                }
+                drag = true;
             }
+        }
+        else
+        {
+            item.transform.parent = null;
+            item.GetComponent<Rigidbody>().useGravity = true;
+            item.GetComponent<Rigidbody>().freezeRotation = false;
+            drop = false;
+            StartCoroutine(Delay2());
+        }
     }
 
     IEnumerator Delay1()
     {
-        yield return new WaitForSeconds(1);
-        drag = false;
+        yield return new WaitForSeconds(2);
         drop = true;
         yield return null;
     }
 
     IEnumerator Delay2()
     {
-        yield return new WaitForSeconds(1);
-        drop = false;
-        drag = true;
+        yield return new WaitForSeconds(2);
+        isHolding = false;
         yield return null;
     }
 }
