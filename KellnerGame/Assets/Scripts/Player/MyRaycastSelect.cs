@@ -5,12 +5,13 @@ using UnityEngine;
 public class MyRaycastSelect : RaycastSelect
 {
 
+    Interactable Interactable;
 
     protected override void OnRaycastEnter(GameObject target)
     {
         if (target.tag == "Interactable")
         {
-            Debug.Log(target);
+            Debug.Log("...");
         }
     }
 
