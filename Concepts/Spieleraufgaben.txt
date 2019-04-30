@@ -1,0 +1,27 @@
+- Gäste kommen automatisch nach, sobald ein Tisch frei ist und
+  er vom Spieler abgeräumt wird.
+
+- Der Spieler ist aufgefordert einen Tisch abzuräumen sobald ein
+  Tisch frei ist.
+
+  - Tischdecke
+
+  - Besteck
+
+  - Tücher
+
+  - Gläser
+
+- Der Spieler muss den Tisch außerdem wieder decken, so, dass
+  neue Gäste platz nehmen können.
+
+- Sobald Gäste platz nehmen nimmt der Spieler die Bestellung auf
+  und gibt sie an der Küche ab.
+
+- Nach einer Zeit ist die Küche fertig und der Spieler ist
+  aufgefordert die fertige Bestellung an der Küche abzuholen und
+  zum richtigen Tisch zu bringen.
+
+- Sobald die Gäste eines Tisches fertig mit Essen sind ist der
+  Spieler aufgefordert ihnen die Rechnung zu geben und das Geld
+  abzuholen.   

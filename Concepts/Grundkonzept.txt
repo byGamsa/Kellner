@@ -1,0 +1,53 @@
+- Spiel alleine oder mit Freunden (max. 4 Spieler)
+  Local Multiplayer-Splitscreen / Online Multiplayer
+
+- Charakter-Auswahl (Skin Creator?)
+
+- Storymode?
+
+- Interaktives Tutorial:
+  
+  - 1-4 Spieler Game-Kurs
+
+  - Abschluss einer Kellnerausbildung
+
+  - Spiel Steuerung
+
+  - Spiel Story einführen
+
+- Sei der Kellner:
+  
+  - eines Restaurant
+
+  - einer Bar
+
+  - eines Hotels
+
+  - ...
+
+- An vielen Orten der Welt:
+
+  - Am Meer
+
+  - Im Bergwerk
+
+  - Auf einer Party
+
+  - Auf einem Berg
+
+  - An einer Schlucht
+
+  - ...
+
+- Mit vielen Interaktion und Team Work:
+
+  - Lianen schwingen 
+
+  - Leuten aus dem Weg laufen
+
+  - Klettern
+
+  - Portale?
+
+  - ...
+  
