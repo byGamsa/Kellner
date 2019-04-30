@@ -14,13 +14,11 @@ public class ItemPickUp : MonoBehaviour
     public bool canHold = true;
 
     public Transform Dest;
-    public GameObject item;
     public GameObject Player;
 
     void Update()
     {
-
-        distance = Vector3.Distance(item.transform.position, Dest.transform.position);
+        distance = Vector3.Distance(this.transform.position, Dest.transform.position);
 
         if (distance <= 3f)
         {
@@ -30,10 +28,10 @@ public class ItemPickUp : MonoBehaviour
             {
                 if (distance >= 1f)
                 {
-                    item.transform.position = Dest.position;
-                    item.transform.rotation = Dest.rotation;
-                    item.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    this.transform.position = Dest.position;
+                    this.transform.rotation = Dest.rotation;
+                    this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    this.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 }
 
             }
@@ -43,13 +41,13 @@ public class ItemPickUp : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     isHolding = true;
-                    item.GetComponent<Rigidbody>().useGravity = false;
-                    item.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    item.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                    item.GetComponent<Rigidbody>().freezeRotation = true;
-                    item.transform.position = Dest.position;
-                    item.transform.rotation = Dest.rotation;
-                    item.transform.parent = Dest.transform;
+                    this.GetComponent<Rigidbody>().useGravity = false;
+                    this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    this.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    this.GetComponent<Rigidbody>().freezeRotation = true;
+                    this.transform.position = Dest.position;
+                    this.transform.rotation = Dest.rotation;
+                    this.transform.parent = Dest.transform;
                     drag = false;
                     StartCoroutine(Delay1());
                 }
@@ -59,16 +57,20 @@ public class ItemPickUp : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.E))
                 {
-                    item.transform.parent = null;
-                    item.GetComponent<Rigidbody>().useGravity = true;
-                    item.GetComponent<Rigidbody>().freezeRotation = false;
+                    this.transform.parent = null;
+                    this.GetComponent<Rigidbody>().useGravity = true;
+                    this.GetComponent<Rigidbody>().freezeRotation = false;
                     drop = false;
                     StartCoroutine(Delay2());
                 }
             }
         }
     }
-    void playerHold()
+        
+            
+
+
+        void playerHold()
     {
         if (isHolding == false)
         {
@@ -79,11 +81,11 @@ public class ItemPickUp : MonoBehaviour
         }
         else
         {
-            item.transform.parent = null;
-            item.GetComponent<Rigidbody>().useGravity = true;
-            item.GetComponent<Rigidbody>().freezeRotation = false;
+            this.transform.parent = null;
+            this.GetComponent<Rigidbody>().useGravity = true;
+            this.GetComponent<Rigidbody>().freezeRotation = false;
             drop = false;
-            StartCoroutine(Delay2());
+            isHolding = false;
         }
     }
 
